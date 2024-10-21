@@ -1,0 +1,49 @@
+# Build Folders
+bin/
+obj/
+
+# User-specific files
+.vscode/
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.userprefs
+
+# Logs
+*.log
+*.tlg
+
+# Dependency folders
+packages/
+node_modules/
+
+# VS Code settings
+.vscode/
+
+# Rider settings
+.idea/
+*.sln.iml
+
+# Visual Studio Code Backup Files
+*.vspscc
+*.vssscc
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# NCrunch
+*.ncrunchproject
+*.ncrunchsolution
+nCrunchTemp/
+
+# Azure Pipelines
+*.azure-pipelines.yml
+
+# DotNetCore watch auto-generated files
+project.lock.json
+project.fragment.lock.json
+
+# Other
+!**/appsettings.json

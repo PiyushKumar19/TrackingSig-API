@@ -2,25 +2,12 @@ using TrackingSig_API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-var redisConnectionString = builder.Configuration.GetConnectionString("RedisConnection");
+builder.Services.AddMemoryCache();  // Add memory cache service
+builder.Services.AddSingleton<IRiderLocationService, RiderLocationService>();  // Add RiderLocationService as singleton
 
-builder.Services.AddStackExchangeRedisCache(options =>
-{
-    options.Configuration = builder.Configuration.GetConnectionString("RedisConnection");
-    options.InstanceName = "riderApp:";
-});
-// Register Redis connection
-builder.Services.AddStackExchangeRedisCache(options =>
-{
-    options.Configuration = redisConnectionString;
-});
 
-// Add health checks
-builder.Services.AddHealthChecks()
-    .AddRedis(builder.Configuration.GetConnectionString("RedisConnection"), name: "Redis");
-
-builder.Services.AddSignalR();
+// Optional: Add health checks for Redis
+builder.Services.AddHealthChecks();
 
 
 builder.Services.AddControllers();
@@ -28,7 +15,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddSignalR();
+
+
 var app = builder.Build();
+
+app.UseCors(cors => cors
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .SetIsOriginAllowed(origin => true));
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -41,7 +36,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 
-app.MapHub<RiderHub>("/riderHub");  // SignalR Hub endpoint
+app.MapHub<RiderHub>("rider-hub");  // SignalR Hub endpoint
 app.MapHealthChecks("/health");
 
 
