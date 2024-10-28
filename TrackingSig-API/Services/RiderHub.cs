@@ -130,7 +130,7 @@ public class RiderHub : Hub
     public async Task UpdateRiderLocation(string riderId, double latitude, double longitude)
     {
         // Store rider location in the in-memory cache
-        _riderLocationService.StoreRiderLocation(riderId, latitude, longitude);
+        await _riderLocationService.StoreRiderLocationAsync(riderId, latitude, longitude);
 
         // Log the operation (optional for debugging)
         Console.WriteLine($"Rider {riderId} updated location: Lat={latitude}, Lon={longitude}");
