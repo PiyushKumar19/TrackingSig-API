@@ -54,8 +54,7 @@
               "RelativeToolTip": "TrackingSig-API\\Services\\RiderHub.cs",
               "ViewState": "AQIAAG0AAAAAAAAAAAAQwIQAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T09:06:17.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T09:06:17.601Z"
             },
             {
               "$type": "Document",
@@ -67,8 +66,7 @@
               "RelativeToolTip": "TrackingSig-API\\Services\\IRiderLocationService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T08:27:04.093Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T08:27:04.093Z"
             },
             {
               "$type": "Document",
@@ -80,8 +78,7 @@
               "RelativeToolTip": "TrackingSig-API\\Services\\RiderLocationService.cs",
               "ViewState": "AQIAALAAAAAAAAAAAAAowNQAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:45:34.941Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T07:45:34.941Z"
             },
             {
               "$type": "Document",
@@ -93,8 +90,7 @@
               "RelativeToolTip": "TrackingSig-API\\Services\\RedisCacheService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:51:56.482Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T07:51:56.482Z"
             },
             {
               "$type": "Document",
@@ -106,8 +102,7 @@
               "RelativeToolTip": "TrackingSig-API\\Services\\IRedisCacheService.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:47:49.048Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T07:47:49.048Z"
             },
             {
               "$type": "Document",
@@ -117,7 +112,7 @@
               "RelativeDocumentMoniker": "TrackingSig-API\\Program.cs",
               "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Program.cs",
               "RelativeToolTip": "TrackingSig-API\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABBAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-28T07:24:24.277Z",
               "EditorCaption": ""
@@ -132,8 +127,7 @@
               "RelativeToolTip": "TrackingSig-API\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-28T07:21:47.272Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T07:21:47.272Z"
             }
           ]
         },
