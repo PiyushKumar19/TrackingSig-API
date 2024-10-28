@@ -1,18 +1,11 @@
-# Base image for building
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+#See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
+
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+# Remove USER app as we need root to install Redis
 WORKDIR /app
-
-# Copy and restore project files
-COPY *.csproj ./
-RUN dotnet restore
-
-# Copy the rest of the files and publish
-COPY . ./
-RUN dotnet publish -c Release -o out
-
-# Runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:7.0
-WORKDIR /app
+EXPOSE 8080
+EXPOSE 8081
+EXPOSE 6379
 
 # Install Redis
 RUN apt-get update && \
@@ -20,14 +13,28 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Copy the published app
-COPY --from=build /app/out .
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+COPY ["TrackingSig-API/TrackingSig-API.csproj", "TrackingSig-API/"]
+RUN dotnet restore "./TrackingSig-API/TrackingSig-API.csproj"
+COPY . .
+WORKDIR "/src/TrackingSig-API"
+RUN dotnet build "./TrackingSig-API.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# Copy entry script
-COPY start.sh ./
-RUN chmod +x start.sh
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "./TrackingSig-API.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-EXPOSE 80
-EXPOSE 443
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
 
-ENTRYPOINT ["./start.sh"]
+# Copy Redis configuration
+COPY redis.conf /etc/redis/redis.conf
+
+# Create start script
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
+ENTRYPOINT ["/app/start.sh"]
