@@ -3,8 +3,28 @@
   "WorkspaceRootPath": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|e:\\mod mon\\evently mk01\\trackingsig\\trackingsig-api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|solutionrelative:trackingsig-api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|e:\\mod mon\\evently mk01\\trackingsig\\trackingsig-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|solutionrelative:trackingsig-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|e:\\mod mon\\evently mk01\\trackingsig\\trackingsig-api\\configurations\\redisconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|solutionrelative:trackingsig-api\\configurations\\redisconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|e:\\mod mon\\evently mk01\\trackingsig\\trackingsig-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|solutionrelative:trackingsig-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|e:\\mod mon\\evently mk01\\trackingsig\\trackingsig-api\\trackingsig-api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|solutionrelative:trackingsig-api\\trackingsig-api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|e:\\mod mon\\evently mk01\\trackingsig\\trackingsig-api\\services\\riderlocationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|solutionrelative:trackingsig-api\\services\\riderlocationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|e:\\mod mon\\evently mk01\\trackingsig\\trackingsig-api\\services\\riderhub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,20 +35,8 @@
       "RelativeMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|solutionrelative:trackingsig-api\\services\\iriderlocationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|e:\\mod mon\\evently mk01\\trackingsig\\trackingsig-api\\services\\riderlocationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|solutionrelative:trackingsig-api\\services\\riderlocationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|e:\\mod mon\\evently mk01\\trackingsig\\trackingsig-api\\services\\rediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|solutionrelative:trackingsig-api\\services\\rediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|e:\\mod mon\\evently mk01\\trackingsig\\trackingsig-api\\services\\irediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|solutionrelative:trackingsig-api\\services\\irediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|e:\\mod mon\\evently mk01\\trackingsig\\trackingsig-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{4D89505C-CF04-4A12-AE9C-26448672383A}|TrackingSig-API\\TrackingSig-API.csproj|solutionrelative:trackingsig-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,88 +54,117 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RiderHub.cs",
-              "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\RiderHub.cs",
-              "RelativeDocumentMoniker": "TrackingSig-API\\Services\\RiderHub.cs",
-              "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\RiderHub.cs",
-              "RelativeToolTip": "TrackingSig-API\\Services\\RiderHub.cs",
-              "ViewState": "AQIAAG0AAAAAAAAAAAAQwIQAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T09:06:17.601Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IRiderLocationService.cs",
-              "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\IRiderLocationService.cs",
-              "RelativeDocumentMoniker": "TrackingSig-API\\Services\\IRiderLocationService.cs",
-              "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\IRiderLocationService.cs",
-              "RelativeToolTip": "TrackingSig-API\\Services\\IRiderLocationService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T08:27:04.093Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RiderLocationService.cs",
-              "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\RiderLocationService.cs",
-              "RelativeDocumentMoniker": "TrackingSig-API\\Services\\RiderLocationService.cs",
-              "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\RiderLocationService.cs",
-              "RelativeToolTip": "TrackingSig-API\\Services\\RiderLocationService.cs",
-              "ViewState": "AQIAALAAAAAAAAAAAAAowNQAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:45:34.941Z"
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "TrackingSig-API\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "TrackingSig-API\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-29T17:43:17.159Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "RedisCacheService.cs",
-              "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\RedisCacheService.cs",
-              "RelativeDocumentMoniker": "TrackingSig-API\\Services\\RedisCacheService.cs",
-              "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\RedisCacheService.cs",
-              "RelativeToolTip": "TrackingSig-API\\Services\\RedisCacheService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACYAAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:51:56.482Z"
+              "Title": "TrackingSig-API",
+              "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\TrackingSig-API.csproj",
+              "RelativeDocumentMoniker": "TrackingSig-API\\TrackingSig-API.csproj",
+              "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\TrackingSig-API.csproj",
+              "RelativeToolTip": "TrackingSig-API\\TrackingSig-API.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-29T17:01:04.581Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IRedisCacheService.cs",
-              "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\IRedisCacheService.cs",
-              "RelativeDocumentMoniker": "TrackingSig-API\\Services\\IRedisCacheService.cs",
-              "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\IRedisCacheService.cs",
-              "RelativeToolTip": "TrackingSig-API\\Services\\IRedisCacheService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:47:49.048Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Program.cs",
               "RelativeDocumentMoniker": "TrackingSig-API\\Program.cs",
               "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Program.cs",
               "RelativeToolTip": "TrackingSig-API\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA2AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T07:24:24.277Z",
+              "WhenOpened": "2024-10-29T05:04:48.057Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RiderLocationService.cs",
+              "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\RiderLocationService.cs",
+              "RelativeDocumentMoniker": "TrackingSig-API\\Services\\RiderLocationService.cs",
+              "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\RiderLocationService.cs",
+              "RelativeToolTip": "TrackingSig-API\\Services\\RiderLocationService.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAwwGwAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T07:45:34.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RedisConfiguration.cs",
+              "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Configurations\\RedisConfiguration.cs",
+              "RelativeDocumentMoniker": "TrackingSig-API\\Configurations\\RedisConfiguration.cs",
+              "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Configurations\\RedisConfiguration.cs",
+              "RelativeToolTip": "TrackingSig-API\\Configurations\\RedisConfiguration.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAxwAwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T14:16:10.243Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "RiderHub.cs",
+              "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\RiderHub.cs",
+              "RelativeDocumentMoniker": "TrackingSig-API\\Services\\RiderHub.cs",
+              "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\RiderHub.cs",
+              "RelativeToolTip": "TrackingSig-API\\Services\\RiderHub.cs",
+              "ViewState": "AQIAAHIAAAAAAAAAAAAwwHQAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T09:06:17.601Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IRiderLocationService.cs",
+              "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\IRiderLocationService.cs",
+              "RelativeDocumentMoniker": "TrackingSig-API\\Services\\IRiderLocationService.cs",
+              "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\IRiderLocationService.cs",
+              "RelativeToolTip": "TrackingSig-API\\Services\\IRiderLocationService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T08:27:04.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "RedisCacheService.cs",
+              "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\RedisCacheService.cs",
+              "RelativeDocumentMoniker": "TrackingSig-API\\Services\\RedisCacheService.cs",
+              "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\Services\\RedisCacheService.cs",
+              "RelativeToolTip": "TrackingSig-API\\Services\\RedisCacheService.cs",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAowGcAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T07:51:56.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\appsettings.json",
               "RelativeDocumentMoniker": "TrackingSig-API\\appsettings.json",
               "ToolTip": "E:\\Mod Mon\\evently Mk01\\TrackingSig\\TrackingSig-API\\appsettings.json",
               "RelativeToolTip": "TrackingSig-API\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-28T07:21:47.272Z"
+              "WhenOpened": "2024-10-28T07:21:47.272Z",
+              "EditorCaption": ""
             }
           ]
         },

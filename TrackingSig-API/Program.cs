@@ -1,32 +1,9 @@
-using Microsoft.Extensions.Caching.Distributed;
-using StackExchange.Redis;
+using TrackingSig_API.Configurations;
 using TrackingSig_API.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//builder.Services.AddMemoryCache();  // Add memory cache service
-// Add Redis configuration
-var multiplexer = ConnectionMultiplexer.Connect(builder.Configuration.GetValue<string>("Redis:ConnectionString") ?? "localhost:6379");
-builder.Services.AddSingleton<IConnectionMultiplexer>(multiplexer);
-
-builder.Services.AddStackExchangeRedisCache(options =>
-{
-    options.Configuration = builder.Configuration.GetValue<string>("Redis:ConnectionString");
-});
-
-// Configure cache options
-builder.Services.Configure<DistributedCacheEntryOptions>(options =>
-{
-    options.AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(10);
-    options.SlidingExpiration = TimeSpan.FromMinutes(2);
-});
-
-builder.Services.AddScoped<ICacheService, RedisCacheService>();
-
-// Add Redis configuration (if not already added)
-
-builder.Services.AddSingleton<IRiderLocationService, RiderLocationService>();  // Add RiderLocationService as singleton
-
+builder.Services.AddRedisServices(builder.Configuration);
 
 // Optional: Add health checks for Redis
 builder.Services.AddHealthChecks();

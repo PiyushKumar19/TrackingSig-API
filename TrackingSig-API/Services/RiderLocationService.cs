@@ -82,85 +82,81 @@ public class RiderLocationService : IRiderLocationService
 {
     private readonly IConnectionMultiplexer _redis;
     private readonly ILogger<RiderLocationService> _logger;
+    private readonly TimeSpan _locationExpiry = TimeSpan.FromHours(24); // Or your preferred expiry time
     private const string RiderLocationHashKey = "rider:locations";
     private const string RiderLocationGeoKey = "rider:locations:geo";
-    private readonly TimeSpan _locationExpiry = TimeSpan.FromMinutes(30);
 
-    public RiderLocationService(
-        IConnectionMultiplexer redis,
-        ILogger<RiderLocationService> logger)
+    public RiderLocationService(IConnectionMultiplexer redis, ILogger<RiderLocationService> logger)
     {
-        _redis = redis;
-        _logger = logger;
+        _redis = redis ?? throw new ArgumentNullException(nameof(redis));
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
     public async Task StoreRiderLocationAsync(string riderId, double latitude, double longitude)
     {
-        try
+        if (string.IsNullOrEmpty(riderId))
+            throw new ArgumentNullException(nameof(riderId));
+
+        // Retry logic configuration
+        var maxRetries = 3;
+        var retryDelay = TimeSpan.FromSeconds(1);
+
+        for (int attempt = 0; attempt <= maxRetries; attempt++)
         {
-            var db = _redis.GetDatabase();
-            var batch = db.CreateBatch();
-
-            // Store location data in a hash
-            var serializedLocation = JsonSerializer.Serialize((latitude, longitude));
-            await batch.HashSetAsync(RiderLocationHashKey,
-                new HashEntry[] { new HashEntry(riderId, serializedLocation) });
-
-            // Store location in geo-spatial index
-            await batch.GeoAddAsync(RiderLocationGeoKey,
-                new GeoEntry(longitude, latitude, riderId));
-
-            // Set expiry for both keys
-            await batch.KeyExpireAsync(RiderLocationHashKey, _locationExpiry);
-            await batch.KeyExpireAsync(RiderLocationGeoKey, _locationExpiry);
-
-            batch.Execute();
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error storing location for rider {RiderId}", riderId);
-            throw;
-        }
-    }
-
-    public async Task<Dictionary<string, (double Latitude, double Longitude)>> GetAllLocationsAsync()
-    {
-        try
-        {
-            var db = _redis.GetDatabase();
-            var hashEntries = await db.HashGetAllAsync(RiderLocationHashKey);
-
-            var locations = new Dictionary<string, (double Latitude, double Longitude)>();
-
-            foreach (var entry in hashEntries)
+            try
             {
-                if (!entry.Value.IsNullOrEmpty)
+                // Check if connection is available
+                if (!_redis.IsConnected)
                 {
-                    var location = JsonSerializer.Deserialize<(double Latitude, double Longitude)>(entry.Value);
-                    locations[entry.Name] = location;
+                    _logger.LogWarning("Redis connection is not available. Attempting to reconnect...");
+                    await _redis.ConfigureAsync();
                 }
-            }
 
-            return locations;
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, "Error retrieving all rider locations");
-            throw;
+                var db = _redis.GetDatabase();
+
+                // Serialize the location
+                var location = new Location { Latitude = latitude, Longitude = longitude };
+                var serializedLocation = JsonSerializer.Serialize(location);
+
+                // Execute commands individually with error handling
+                await ExecuteRedisOperationsAsync(db, riderId, latitude, longitude, serializedLocation);
+
+                // If successful, break the retry loop
+                break;
+            }
+            catch (RedisConnectionException ex)
+            {
+                _logger.LogError(ex, "Redis connection error on attempt {Attempt} for rider {RiderId}", attempt + 1, riderId);
+
+                if (attempt == maxRetries)
+                {
+                    throw new RedisConnectionException(ConnectionFailureType.InternalFailure, ex.Message);
+                }
+
+                await Task.Delay(retryDelay);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error storing location for rider {RiderId} on attempt {Attempt}", riderId, attempt + 1);
+                throw;
+            }
         }
     }
 
-    public async Task<(double Latitude, double Longitude)?> GetRiderLocationAsync(string riderId)
+    public async Task<Location> GetRiderLocationAsync(string riderId)
     {
+        if (string.IsNullOrEmpty(riderId))
+            throw new ArgumentNullException(nameof(riderId));
+
         try
         {
             var db = _redis.GetDatabase();
-            var locationJson = await db.HashGetAsync(RiderLocationHashKey, riderId);
-
-            if (locationJson.IsNullOrEmpty)
-                return null;
-
-            return JsonSerializer.Deserialize<(double Latitude, double Longitude)>(locationJson);
+            var serializedLocation = await db.HashGetAsync(RiderLocationHashKey, riderId);
+            if (!string.IsNullOrEmpty(serializedLocation))
+            {
+                return JsonSerializer.Deserialize<Location>(serializedLocation);
+            }
+            return null;
         }
         catch (Exception ex)
         {
@@ -169,46 +165,39 @@ public class RiderLocationService : IRiderLocationService
         }
     }
 
-    public async Task<List<(string RiderId, double Latitude, double Longitude, double DistanceKm)>>
-        GetNearbyRidersAsync(double latitude, double longitude, double radiusKm)
+    public async Task<IEnumerable<Location>> GetAllRiderLocationsAsync()
     {
         try
         {
             var db = _redis.GetDatabase();
-
-            // Use GeoRadiusResult instead of GeoSearchAsync
-            var results = await db.GeoRadiusAsync(
-                RiderLocationGeoKey,
-                longitude,  // Note: Redis expects longitude first
-                latitude,
-                radiusKm,
-                unit: GeoUnit.Kilometers,
-                options: GeoRadiusOptions.Default | GeoRadiusOptions.WithCoordinates | GeoRadiusOptions.WithDistance,
-                order: Order.Ascending
-            );
-
-            var nearbyRiders = new List<(string RiderId, double Latitude, double Longitude, double DistanceKm)>();
-
-            foreach (var result in results)
-            {
-                if (result.Position.HasValue)
-                {
-                    nearbyRiders.Add((
-                        result.Member.ToString(),
-                        result.Position.Value.Latitude,
-                        result.Position.Value.Longitude,
-                        result.Distance ?? 0
-                    ));
-                }
-            }
-
-            return nearbyRiders;
+            var allRiderLocations = await db.HashGetAllAsync(RiderLocationHashKey);
+            return allRiderLocations.Select(x => JsonSerializer.Deserialize<Location>(x.Value));
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Error searching for nearby riders at ({Latitude}, {Longitude})",
-                latitude, longitude);
+            _logger.LogError(ex, "Error retrieving all rider locations");
             throw;
         }
+    }
+
+    private async Task ExecuteRedisOperationsAsync(IDatabase db, string riderId, double latitude, double longitude, string serializedLocation)
+    {
+        // Execute commands individually instead of using batch
+        var tasks = new List<Task>
+        {
+            // Store the location hash
+            db.HashSetAsync(RiderLocationHashKey,
+                new HashEntry[] { new HashEntry(riderId, serializedLocation) }),
+
+            // Store the geo location
+            db.GeoAddAsync(RiderLocationGeoKey,
+                new GeoEntry(longitude, latitude, riderId)),
+
+            // Set expiration for both keys
+            db.KeyExpireAsync(RiderLocationHashKey, _locationExpiry),
+            db.KeyExpireAsync(RiderLocationGeoKey, _locationExpiry)
+        };
+
+        await Task.WhenAll(tasks);
     }
 }

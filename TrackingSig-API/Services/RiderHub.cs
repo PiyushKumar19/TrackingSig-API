@@ -120,11 +120,16 @@ public class RiderHub : Hub
         await base.OnConnectedAsync();
     }
 
-    public override async Task OnDisconnectedAsync(Exception exception)
+    //public override async Task OnDisconnectedAsync(Exception exception)
+    //{
+    //    // Handle disconnection if needed
+    //    Console.WriteLine("Client disconnected.");
+    //    await base.OnDisconnectedAsync(exception);
+    //}
+
+    public async Task GetPing()
     {
-        // Handle disconnection if needed
-        Console.WriteLine("Client disconnected.");
-        await base.OnDisconnectedAsync(exception);
+        await Clients.All.SendAsync("You got a Ping! :)");
     }
 
     public async Task UpdateRiderLocation(string riderId, double latitude, double longitude)
@@ -137,5 +142,47 @@ public class RiderHub : Hub
 
         // Send confirmation back to the client (optional)
         await Clients.Caller.SendAsync("LocationUpdated", $"Location data for rider {riderId} stored successfully.");
+    }
+
+    public async Task GetRiderLocation(string riderId)
+    {
+        // Retrieve rider location from the Redis cache
+        var location = await _riderLocationService.GetRiderLocationAsync(riderId);
+
+        if (location != null)
+        {
+            Console.WriteLine($"Rider {riderId} location: Lat={location.Latitude}, Lon={location.Longitude}");
+
+            // Send the location data back to the caller
+            await Clients.Caller.SendAsync("ReceiveRiderLocation", riderId, location.Latitude, location.Longitude);
+        }
+        else
+        {
+            Console.WriteLine($"Location for rider {riderId} not found.");
+
+            // Notify the caller that no location was found
+            await Clients.Caller.SendAsync("ReceiveRiderLocation", riderId, null, null);
+        }
+    }
+
+    public async Task GetAllRider()
+    {
+        // Retrieve rider location from the Redis cache
+        var location = await _riderLocationService.GetAllRiderLocationsAsync();
+
+        if (location != null)
+        {
+            //Console.WriteLine($"Rider {riderId} location: Lat={location.Latitude}, Lon={location.Longitude}");
+
+            // Send the location data back to the caller
+            await Clients.Caller.SendAsync("ReceiveAllRiderLocation", location);
+        }
+        else
+        {
+            Console.WriteLine($"Location for riders not found.");
+
+            // Notify the caller that no location was found
+            await Clients.Caller.SendAsync("ReceiveAllRiderLocation", null, null, null);
+        }
     }
 }

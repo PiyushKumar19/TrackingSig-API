@@ -1,49 +1,129 @@
-# Build Folders
+# # Build Folders
+# bin/
+# obj/
+
+# # User-specific files
+# .vscode/
+# .vs/
+# *.user
+# *.rsuser
+# *.suo
+# *.userosscache
+# *.userprefs
+
+# # Logs
+# *.log
+# *.tlg
+
+# # Dependency folders
+# packages/
+# node_modules/
+
+# # VS Code settings
+# .vscode/
+
+# # Rider settings
+# .idea/
+# *.sln.iml
+
+# # Visual Studio Code Backup Files
+# *.vspscc
+# *.vssscc
+
+# # Resharper
+# _ReSharper*/
+# *.DotSettings.user
+
+# # NCrunch
+# *.ncrunchproject
+# *.ncrunchsolution
+# nCrunchTemp/
+
+# # Azure Pipelines
+# *.azure-pipelines.yml
+
+# # DotNetCore watch auto-generated files
+# project.lock.json
+# project.fragment.lock.json
+
+# # Other
+# # !**/appsettings.json
+
+
+# .NET Core specific
 bin/
 obj/
+out/
+*.exe
+*.dll
+*.pdb
+*.cache
+*.config
+*.log
+*.vspscc
+*.vssscc
+.vscode/
 
 # User-specific files
-.vscode/
 *.user
-*.rsuser
 *.suo
 *.userosscache
-*.userprefs
+*.sln.docstates
 
-# Logs
-*.log
-*.tlg
-
-# Dependency folders
-packages/
-node_modules/
-
-# VS Code settings
-.vscode/
-
-# Rider settings
+# Rider IDE files
 .idea/
 *.sln.iml
 
-# Visual Studio Code Backup Files
-*.vspscc
-*.vssscc
+# Visual Studio Code files
+.vscode/
 
-# Resharper
+# macOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
+desktop.ini
+
+# Linux files
+*~
+
+# Logs
+logs/
+*.log
+
+# Application Insights log
+ApplicationInsights/
+
+# Configuration files containing secrets (use environment variables for sensitive data)
+# appsettings.Development.json
+# appsettings.Production.json
+# appsettings.Local.json
+# appsettings.*.json  # To ignore all environment-specific configs, if you use environment variables
+
+# Sensitive and generated files
+secrets.json
+.env
+.env.*
+
+# NuGet packages
+*.nupkg
+# The packages folder can be ignored if you have "restore" set in your build pipeline
+packages/
+# Uncomment if using Cake, a build automation tool for C#
+tools/
+
+# Resharper settings
 _ReSharper*/
-*.DotSettings.user
+*.[Rr]e[Ss]harper
 
-# NCrunch
-*.ncrunchproject
-*.ncrunchsolution
-nCrunchTemp/
+# Azure Function specific
+.local.settings.json
 
-# Azure Pipelines
-*.azure-pipelines.yml
+# Dotnet publish output
+publish/
 
-# DotNetCore watch auto-generated files
-project.lock.json
-project.fragment.lock.json
+# Azure pipelines
+.azure-pipelines/
 
-# Other
-!**/appsettings.json
+# Local development certificates
+localhost.pfx

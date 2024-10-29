@@ -15,7 +15,9 @@
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "RedisHost": "decent-firefly-39737.upstash.io:6379",
+        "RedisPassword": "AZs5AAIjcDE2ZTJkMmM4N2M4NWQ0MDMwYmFhZjQ0Yjg0NjMwNjY4NHAxMA"
       },
       "dotnetRunMessages": true,
       "applicationUrl": "https://localhost:7136;http://localhost:5178"
